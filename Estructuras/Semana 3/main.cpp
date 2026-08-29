@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// Guillermo Gil Palomar A01199519 
 /*
     Descripcion: suma los numeros del 1 al n con un ciclo.
     Entrada: n, un entero positivo.
