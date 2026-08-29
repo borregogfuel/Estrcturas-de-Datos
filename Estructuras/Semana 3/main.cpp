@@ -2,11 +2,11 @@
 using namespace std;
 
 /*
-    Descripcion: Calcula la sumatoria de 1 hasta n usando un ciclo.
-    Entrada: n, entero positivo.
-    Salida: la suma 1 + 2 + ... + n como long long.
+    Descripcion: suma los numeros del 1 al n con un ciclo.
+    Entrada: n, un entero positivo.
+    Salida: el resultado de la suma.
     Precondicion: n >= 0.
-    Postcondicion: retorna la sumatoria; si n es 0 retorna 0.
+    Postcondicion: si n es 0 devuelve 0.
     Complejidad: O(n)
 */
 long long sumaIterativa(int n) {
@@ -21,11 +21,11 @@ long long sumaIterativa(int n) {
 }
 
 /*
-    Descripcion: Calcula la sumatoria de 1 hasta n de forma recursiva.
-    Entrada: n, entero positivo.
-    Salida: la suma 1 + 2 + ... + n como long long.
+    Descripcion: lo mismo pero llamandose a si misma.
+    Entrada: n, un entero positivo.
+    Salida: el resultado de la suma.
     Precondicion: n >= 0.
-    Postcondicion: retorna la sumatoria; el caso base n <= 0 retorna 0.
+    Postcondicion: el caso base es n <= 0 y devuelve 0.
     Complejidad: O(n)
 */
 long long sumaRecursiva(int n) {
@@ -40,16 +40,16 @@ long long sumaRecursiva(int n) {
 }
 
 /*
-    Descripcion: Calcula la sumatoria de 1 hasta n con la formula de Gauss.
-    Entrada: n, entero positivo.
-    Salida: la suma n*(n+1)/2 como long long.
+    Descripcion: usa la formula n*(n+1)/2, sin ciclos.
+    Entrada: n, un entero positivo.
+    Salida: el resultado de la suma.
     Precondicion: n >= 0.
-    Postcondicion: retorna la sumatoria en una sola operacion.
+    Postcondicion: lo saca en una sola cuenta.
     Complejidad: O(1)
 */
 long long sumaDirecta(int n) {
 
-    // El cast evita que n*(n+1) se desborde en int cuando n es grande
+    // sin el cast, n*(n+1) se pasa del limite de int cuando n es grande
     return (long long)n * (n + 1) / 2;
 }
 
@@ -58,7 +58,7 @@ int main() {
     int s, n;
     cin >> s;
 
-    // Por cada n leido se imprimen los tres resultados separados por espacio
+    // leo cada n e imprimo los tres resultados separados por espacio
     for (int i = 0; i < s; i++){
         cin >> n;
         cout << sumaIterativa(n) << " " << sumaRecursiva(n) << " " << sumaDirecta(n) << "\n";
